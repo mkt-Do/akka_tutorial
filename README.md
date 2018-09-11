@@ -1,0 +1,6 @@
+# akka tutorial
+
+```
+$ sbt run
+```
+
