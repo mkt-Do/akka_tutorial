@@ -16,7 +16,6 @@ object Main extends App {
   try StdIn.readLine()
   finally system.terminate()
 }
-*/
 
 import jp.mkt.akka.actors.{ StartStopActor1, StartStopActor2 }
 
@@ -28,5 +27,17 @@ object Main extends App {
   println(">>> Press ENTER to exit <<<")
   try StdIn.readLine()
   finally system.terminate()
+}
+*/
+
+import jp.mkt.akka.actors.IoTSupervisor
+
+object Main extends App {
+  val system = ActorSystem("mySystem")
+
+  try {
+    val supervisor = system.actorOf(IoTSupervisor.props(), "IoT-Supervisor")
+    StdIn.readLine()
+  } finally system.terminate()
 }
 
